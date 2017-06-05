@@ -9,10 +9,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 //import org.openqa.selenium.support.ui.Select;
 //import org.openqa.selenium.WebElement;
 
-public class AnyCToEx {
+	
+public class AnyExToC {
 
 	public static void main(String[] args) throws InterruptedException {
-
+		
 		//path
 		System.setProperty("webdriver.firefox.bin", "D:\\FireFox\\firefox.exe");
 		System.setProperty("webdriver.gecko.driver","E:\\Selenium\\geckodriver.exe");
@@ -30,8 +31,8 @@ public class AnyCToEx {
 		driver.findElement(By.xpath("//*[@id='search']/div[1]/div/div[2]/div/div/ul/li[1]")).click();
 		
 		//ex + c
-		driver.findElement(By.xpath("//*[@id='cat-want-0']/div/div[6]")).click();
-		driver.findElement(By.xpath("//*[@id='cat-have-0']/div/div[4]")).click();
+		driver.findElement(By.xpath("//*[@id='cat-have-0']/div/div[6]")).click();
+		driver.findElement(By.xpath("//*[@id='cat-want-0']/div/div[4]")).click();
 		
 		
 		
@@ -42,10 +43,10 @@ public class AnyCToEx {
 		Thread.sleep(2000);
 		
 		//ratio
-		System.out.println("Best ratio: ex " + driver.findElement(By.cssSelector("div[class='displayoffer-middle']")).getText() + " c");
+		System.out.println("Best ratio: c " + driver.findElement(By.cssSelector("div[class='displayoffer-middle']")).getText() + " ex");
 		
 		//close
 		driver.close();
-		
 	}
+
 }
