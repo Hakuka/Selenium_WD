@@ -7,7 +7,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 	
 public class AnyExToC {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static String ETC(String[] args) throws InterruptedException {
+		
+		String league; 
 		
 		//path
 		System.setProperty("webdriver.firefox.bin", "D:\\FireFox\\firefox.exe");
@@ -21,7 +23,6 @@ public class AnyExToC {
 		driver.get("http://currency.poe.trade/");
 		
 		//open + select - god why? 
-		//LSC league
 		driver.findElement(By.xpath("//*[@id='search']/div[1]/div/div[2]/div")).click();
 		driver.findElement(By.xpath("//*[@id='search']/div[1]/div/div[2]/div/div/ul/li[1]")).click();
 		
@@ -37,11 +38,16 @@ public class AnyExToC {
 		//w8 for reload page - need find better idea about it
 		Thread.sleep(2000);
 		
+		//liga do zwrotu
+		league = driver.getTitle();
+		
 		//ratio
 		System.out.println("Best ratio: c " + driver.findElement(By.cssSelector("div[class='displayoffer-middle']")).getText() + " ex");
 		
 		//close
 		driver.close();
-	}
+		
+		return league;
+		}
 
 }
